@@ -1,38 +1,106 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: "Montserrat", sans-serif;
+  height: 100vh;
+  background-color: #996b42;
+  overflow: hidden;
+  color: #f0ebd7;
+  padding: 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body,
+.container,
+.container-controls,
+.controls,
+.control,
+.container-time,
+.time,
+.btns,
+button {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.container {
+  flex-direction: column;
+  height: auto;
+  width: 35rem;
+  gap: 3rem;
+  padding: 1.5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.title {
+  font-size: 2.6rem;
+}
+
+.container-controls {
+  width: 100%;
+  justify-content: space-around;
+}
+
+.controls {
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.controls h3 {
+  font-size: 1.2rem;
+  letter-spacing: 1.5px;
+}
+.control {
+  gap: 0.5rem;
+  padding: 0.2rem;
+}
+
+.control span {
+  font-size: 1.8rem;
+}
+
+button {
+  font-size: 2.25rem;
+  background-color: transparent;
+  border: none;
+  padding: 0.2rem;
+  color: #341100;
+  cursor: pointer;
+}
+
+.container-time {
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.time {
+  flex-direction: column;
+  border: 6px solid#341100;
+  padding: 1rem 3rem;
+  border-radius: 1rem;
+  gap: 1rem;
+}
+
+#timer-label {
+  font-size: 1.4rem;
+  letter-spacing: 0.2rem;
+}
+
+#time-left {
+  font-size: 4.5rem;
+  letter-spacing: 0.125rem;
+  font-weight: 400;
+}
+
+.btns {
+  gap: 3em;
+}
+
+.author {
+  color: #f0ebd7;
+  font-size: 1rem;
 }
