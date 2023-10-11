@@ -8,7 +8,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useRef, useState } from "react";
 import "./App.css";
-import alarmAudio from './assets/Alarm_Clock.mp3'
+import alarmAudio from "./assets/Alarm_Clock.mp3";
 
 function App() {
   const [initialMinSession, setInitialMinSession] = useState(25);
@@ -23,6 +23,14 @@ function App() {
   const minColor = minutosBreak < 1 || minutosSession < 1;
 
   useEffect(() => {
+    if (minutosBreak === 0 && segundos === 0) {
+      audioRef.current.play();
+    } else if (minutosSession === 0 && segundos === 0) {
+      audioRef.current.play();
+    }
+  }, [minutosBreak, minutosSession, segundos]);
+
+  useEffect(() => {
     let timer;
     if (isPlay) {
       timer = setInterval(() => {
@@ -30,20 +38,16 @@ function App() {
           setSegundos(segundos - 1);
         } else {
           if (isSession && minutosSession === 0) {
-            audioRef.current.play()
-            setTimeout(() => {
+            setMinutosSession(initialMinSession);
               setIsSession(false);
-              setMinutosSession(initialMinSession);
-            }, 1500);
+            
           } else if (isSession) {
             setMinutosSession(minutosSession - 1);
             setSegundos(59);
           } else if (!isSession && minutosBreak === 0) {
-            audioRef.current.play()
-            setTimeout(() => {
-              setIsSession(true);
-              setMinutosBreak(initialMinBreak);
-            }, 1500);
+            setMinutosBreak(initialMinBreak);
+            setIsSession(true);
+            
           } else if (!isSession) {
             setMinutosBreak(minutosBreak - 1);
             setSegundos(59);
@@ -107,10 +111,8 @@ function App() {
     setSegundos(0);
     setIsPlay(false);
     setIsSession(true);
-    audioRef.current.pause()
-    audioRef.current.currentTime = 0
-
-
+    audioRef.current.pause();
+    audioRef.current.currentTime = 0;
   };
 
   return (
@@ -158,11 +160,9 @@ function App() {
             style={{ color: minColor ? "#9c0720" : "inherit" }}
           >
             {isSession
-              ? minutosSession.toString().padStart(2, "0")
-              : minutosBreak.toString().padStart(2, "0")}
-            :{segundos.toString().padStart(2, "0")}
+              ? minutosSession.toString().padStart(2, "0"): minutosBreak.toString().padStart(2, "0")}:{segundos.toString().padStart(2, "0")}
           </div>
-          <audio ref={audioRef} src={alarmAudio} volume={50}></audio>
+          <audio id="beep" ref={audioRef} src={alarmAudio} volume={50}></audio>
         </div>
 
         <div className="btns">
