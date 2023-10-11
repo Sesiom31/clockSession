@@ -82,9 +82,10 @@ button {
 
 .time {
   width: 20rem;
+  height: 11rem;
   flex-direction: column;
   border: 6px solid#341100;
-  padding: 1rem 3rem;
+  padding: 0.5rem 1.5rem;
   border-radius: 1rem;
   gap: 1rem;
 }
@@ -92,7 +93,7 @@ button {
 #timer-label {
   font-size: 1.4rem;
   letter-spacing: 0.2rem;
-  font-weight: 500;
+  font-weight: 700;
 
 }
 
@@ -101,6 +102,7 @@ button {
   font-weight: 500;
   width: 100%;
   text-align: center;
+  letter-spacing: 5px;
 }
 
 .btns {
@@ -116,4 +118,37 @@ button {
 
 #reset:active{
   scale: 0.85;
+}
+
+@media screen and (max-width: 500px) {
+  .container{
+    gap: 2rem;
+    padding: 1rem;
+  }
+  .title{
+    font-size: 2rem;
+  }
+  .container-controls{
+    flex-direction: column-reverse;
+    gap: 1.5rem;
+  }
+
+  .time{
+    width: 15rem;
+    height: 9rem;
+  }
+
+  #time-left{
+    font-size: 3rem;
+  }
+
+  .controls h3{
+    font-size: 1.1rem;
+    text-align: center;
+    letter-spacing: normal;
+  }
+
+  #timer-label{
+    font-size: 1.3;
+  }
 }
