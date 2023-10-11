@@ -39,15 +39,13 @@ function App() {
         } else {
           if (isSession && minutosSession === 0) {
             setMinutosSession(initialMinSession);
-              setIsSession(false);
-            
+            setIsSession(false);
           } else if (isSession) {
             setMinutosSession(minutosSession - 1);
             setSegundos(59);
           } else if (!isSession && minutosBreak === 0) {
             setMinutosBreak(initialMinBreak);
             setIsSession(true);
-            
           } else if (!isSession) {
             setMinutosBreak(minutosBreak - 1);
             setSegundos(59);
@@ -160,7 +158,9 @@ function App() {
             style={{ color: minColor ? "#9c0720" : "inherit" }}
           >
             {isSession
-              ? minutosSession.toString().padStart(2, "0"): minutosBreak.toString().padStart(2, "0")}:{segundos.toString().padStart(2, "0")}
+              ? minutosSession.toString().padStart(2, "0")
+              : minutosBreak.toString().padStart(2, "0")}
+            :{segundos.toString().padStart(2, "0")}
           </div>
           <audio id="beep" ref={audioRef} src={alarmAudio} volume={50}></audio>
         </div>
