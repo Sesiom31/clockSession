@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/clockSession/static/css/main.28aaf080.css",
+    "main.js": "/clockSession/static/js/main.9dc74afa.js",
+    "static/js/787.8af8807d.chunk.js": "/clockSession/static/js/787.8af8807d.chunk.js",
+    "static/media/Alarm_Clock.mp3": "/clockSession/static/media/Alarm_Clock.09c2d9b4d424b156b23d.mp3",
+    "index.html": "/clockSession/index.html",
+    "main.28aaf080.css.map": "/clockSession/static/css/main.28aaf080.css.map",
+    "main.9dc74afa.js.map": "/clockSession/static/js/main.9dc74afa.js.map",
+    "787.8af8807d.chunk.js.map": "/clockSession/static/js/787.8af8807d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.28aaf080.css",
+    "static/js/main.9dc74afa.js"
+  ]
+}
