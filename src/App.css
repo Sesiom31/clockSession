@@ -61,6 +61,8 @@ button {
 
 .control span {
   font-size: 1.8rem;
+  width: 3rem;
+  text-align: center;
 }
 
 button {
@@ -70,6 +72,7 @@ button {
   padding: 0.2rem;
   color: #341100;
   cursor: pointer;
+  width: 2.5rem;
 }
 
 .container-time {
@@ -78,6 +81,7 @@ button {
 }
 
 .time {
+  width: 20rem;
   flex-direction: column;
   border: 6px solid#341100;
   padding: 1rem 3rem;
@@ -94,13 +98,20 @@ button {
   font-size: 4.5rem;
   letter-spacing: 0.125rem;
   font-weight: 400;
+  width: 100%;
 }
 
 .btns {
-  gap: 3em;
+  gap: 3rem;
+  width: 100%;
 }
 
 .author {
   color: #f0ebd7;
   font-size: 1rem;
+}
+
+
+#reset:active{
+  scale: 0.85;
 }
